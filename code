@@ -1,0 +1,28 @@
+// ==UserScript==
+// @name         translate ignore mathjax available for google translate
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://www.tampermonkey.net/index.php?ext=dhdg
+// @match        https://journals.sagepub.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=tampermonkey.net
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    // Your code here...
+
+
+    window.onload=function(){
+        console.clear();
+        var arr = document.getElementsByClassName("MathJax");
+        var i;
+        for (i = 0; i < arr.length; i++) {
+            arr[i].setAttribute("class", "MathJax notranslate");
+        }
+        console.log(["MathJax_number",arr.length]);
+    }
+
+})();
