@@ -11,7 +11,8 @@
 
 power automate对于少部分网页，无法运行，到了某一步，会卡死，对于这个网页就不要用power automate。还有有可能MathJax_SVG对应的javascript在Power Automate里跑不通，那么禁用这条语句，然后在网页刷新后，控制台执行这段语句，我印象中temportary money好像不太行。
 
-javascript输入。根据网页具体情况来修改，有时候难处理的，可以写循环语句和判断语句修改格式
+javascript修改：根据网页具体情况来修改，有时候难处理的，可以写循环语句和判断语句修改格式。对于某个不要进行修改的公式或变量，可以用F12选择一个元素以检查（一般时最左边那个按钮）。如果某一级的修改导致格式不正确，可以选择上一级或下一级的多试试。
+html：现在比如arxiv都可以用html(html experimental)。有些文档也可以转成html。一般用浏览器自带的翻译功能，比如edge右键翻译为中文。
 ````
 function ExecuteScript()
 {
