@@ -11,6 +11,23 @@
 
 power automate对于少部分网页，无法运行，到了某一步，会卡死，对于这个网页就不要用power automate。还有有可能MathJax_SVG对应的javascript在Power Automate里跑不通，那么禁用这条语句，然后在网页刷新后，控制台执行这段语句，我印象中temportary money好像不太行。
 
+javascript输入。根据网页具体情况来修改，有时候难处理的，可以写循环语句和判断语句修改格式
+````
+function ExecuteScript()
+{
+	document.body.innerHTML = document.body.innerHTML.replace(/class="MathJax_SVG"/g, 'class="MathJax_SVG notranslate"');
+	
+	document.body.innerHTML = document.body.innerHTML.replace(/class="MathJax CtxtMenu_Attached_0"/g, 'class="MathJax CtxtMenu_Attached_0 notranslate"');
+	
+	document.body.innerHTML = document.body.innerHTML.replace(/class="MathJax_Preview"/g, 'class="MathJax_Preview notranslate"');
+	
+	
+	document.body.innerHTML = document.body.innerHTML.replace(/<sub>/g, '<sub class="notranslate">');
+}
+````
+
+
+power automate流
 ````
 Variables.CreateNewList List=> List_website
 Variables.AddItemToList Item: $'''https://link.springer.com/article/10.1007/s10439-022-02982-5''' List: List_website
